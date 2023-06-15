@@ -1,2 +1,2 @@
-web: gunicorn 'BeRecipe.wsgi.application'
+web: gunicorn BeRecipe.wsgi
 release: python manage.py migrate
