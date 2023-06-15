@@ -136,7 +136,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-CSRF_TRUSTED_ORIGINS = ['https://berecipedjango-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 
 # Static files (CSS, JavaScript, Images)
