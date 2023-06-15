@@ -21,7 +21,11 @@ class recipies_details(APIView):
     def get(self, request):
         if 'rec' in request.GET and request.GET['rec']:
             rec = request.GET['rec']
-            recipes = Recipes.objects.filter(category__id=rec)
+            if rec == 'all':
+                recipes = Recipes.objects.all()
+            else:
+                recipes = Recipes.objects.filter(category__id=rec)
+            
         else:
             recipes = Recipes.objects.all()
         serializer = RecipiesSerializer(recipes, many=True)
