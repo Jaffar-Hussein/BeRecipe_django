@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'recipe',
+     'corsheaders', # corsheaders
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', # Django REST Framework
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware", # whitenoise
+    'corsheaders.middleware.CorsMiddleware', # corsheaders
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -138,6 +140,8 @@ USE_TZ = True
 
 CSRF_TRUSTED_ORIGINS = ['https://berecipedjango-production.up.railway.app']
 
+# List of allowd cors origins
+CORS_ALLOWED_ORIGINS = ['https://be-recipe-react.vercel.app']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
